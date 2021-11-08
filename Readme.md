@@ -1,4 +1,4 @@
-# How to run product page
+ # How to run product page
 
 ## Prerequisite
 
@@ -13,10 +13,10 @@ python productpage.py 9080
 
 ```bash
 # Build Docker Image for productpage service
-docker build -t productpage .
+docker build -t product .
 
 # Run productpage service on port 8083
-docker run -d --name productpage -p 8083:9080 -e ENABLE_EXTERNAL_BOOK_SERVICE=true productpage
+docker run -d --name product -p 8083:8083 product
 ```
 
 * Test with path index page.

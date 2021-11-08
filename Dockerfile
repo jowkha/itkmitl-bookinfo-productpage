@@ -1,11 +1,10 @@
-FROM python:3.7-slim
+FROM python:3.8.12
 
-WORKDIR /home/src/app/
+WORKDIR /usr/src/app/
 
-COPY requirements.txt ./
-RUN pip install -r requirements.txt
+COPY . /usr/src/app/
+RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . /home/src/app/
-EXPOSE 9080
+EXPOSE 8083
 
-CMD ["python","/home/src/app/productpage.py","9080"]
+CMD ["python", "/usr/src/app/productpage.py", "8083"]
