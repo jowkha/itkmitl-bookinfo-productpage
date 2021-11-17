@@ -1,0 +1,15 @@
+productpage:
+  namespace: student3-bookinfo-uat
+  replicas: 1
+  imagePullSecrets: registry-bookinfo
+  port: 8083
+  image: ghcr.io/jowkha/bookinfo-productpage
+  tag: uat
+ingress:
+  host: itkmitl.bookinfo.uat.opsta.net
+  path: "/student3/productpage(/|$)(.*)"
+  serviceType: ClusterIP
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    
